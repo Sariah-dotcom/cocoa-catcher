@@ -14,7 +14,7 @@ clock = pygame.time.Clock()
 
 # Background Music
 pygame.mixer.music.load('music/christmas-party.mp3')
-pygame.mixer.music.set_volume(0.3)
+pygame.mixer.music.set_volume(0.2)
 pygame.mixer.music.play(-1)
 
 background = pygame.image.load('images/background.png')
@@ -31,7 +31,7 @@ def render_score():
     scoreCard = pygame.image.load('images/score-card.png')
     screen.blit(scoreCard, (SCREEN_WIDTH // 2 - scoreCard.get_width() // 2, 220))
 
-    font_path = 'font/ConcertOne-Regular.ttf'
+    font_path = 'fonts/ConcertOne-Regular.ttf'
     font = pygame.font.Font(font_path, 35)
     score_text = font.render(f"Final Score: {current_score}", True, black)
     screen.blit(score_text, (SCREEN_WIDTH // 2 - score_text.get_width() // 2, 320))
@@ -74,7 +74,7 @@ def title_screen():
         clock.tick(60)
 
         mug = pygame.image.load('images/mug.png')
-        screen.blit(mug, (SCREEN_WIDTH // 2 - mug.get_width() // 2 + 20, SCREEN_HEIGHT // 2 - mug.get_height() // 2 + 50))
+        screen.blit(mug, (SCREEN_WIDTH // 2 - mug.get_width() // 2 + 20, SCREEN_HEIGHT // 2 - mug.get_height() // 2 + 80))
 
         render_prompt()
 
@@ -172,7 +172,6 @@ def reset_game():
     count = 0
     current_score = 0
 
-
 # Player image and positions
 playerImg = pygame.transform.scale(pygame.image.load("images/mug-2.png"),(150,150))
 playerX = SCREEN_WIDTH // 2 - playerImg.get_width()//2
@@ -186,7 +185,7 @@ def main_game():
     global running, playerX, playerY, playerX_change, playerImg, count, current_score, font_path
     ingredients = [set_ingredient() for _ in range(3)]
 
-    font_path = 'font/ConcertOne-Regular.ttf'
+    font_path = 'fonts/ConcertOne-Regular.ttf'
 
     count = 0
     current_score = 0
